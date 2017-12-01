@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  webapp:
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile
+  
+    ports:
+    - "8080:80"
+
+  backend:
+    build:
+      context: ./backend-node
+      dockerfile: Dockerfile
+
+    ports:
+      - "3000:3000"
